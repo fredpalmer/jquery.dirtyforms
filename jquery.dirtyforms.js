@@ -290,10 +290,10 @@ if (typeof jQuery == 'undefined') throw("jQuery Required");
             case 'click':
                 dirtylog("Refiring click event");
                 var event = new jQuery.Event('click');
-                $(e.target).trigger(event);
+                $(e.currentTarget).trigger(event);
                 if (!event.isDefaultPrevented()) {
-                    dirtylog('Sending location to ' + $(e.target).attr('href'));
-                    location.href = $(e.target).attr('href');
+                    dirtylog('Sending location to ' + $(e.currentTarget).attr('href'));
+                    location.href = $(e.currentTarget).attr('href');
                     return;
                 }
                 break;
